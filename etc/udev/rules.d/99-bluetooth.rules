@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PG-9062S|PG-9037", ENV{DEVNAME}=="/dev/input/event*", SYMLINK+="input/$attr{name}", RUN+="/bin/systemctl --no-block start gamepads@$attr{name}.service"
+ACTION=="remove", SUBSYSTEM=="input", ATTRS{name}=="PG-9062S|PG-9037", RUN+="/home/pi/gamepads.sh gamepadDisconnect $attr{name}"

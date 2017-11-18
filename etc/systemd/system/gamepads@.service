@@ -1,0 +1,6 @@
+[Unit]
+Description=Gamepads Service
+
+[Service]
+Type=simple
+ExecStart=/home/pi/gamepads.sh gamepadConnect %i
