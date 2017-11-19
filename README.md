@@ -26,7 +26,7 @@ sudo /home/pi/RetroPie-Setup/retropie_setup.sh
 ```
 Manage packages -> Manage driver packages -> xboxdrv -> Install from binary
 
-Don't enable it. Check /etc/rc.local that xboxdrv don't start here.
+Don't enable it. Check `/etc/rc.local` that xboxdrv don't start here.
 
 ### Add udev rules
 
@@ -35,7 +35,7 @@ sudo nano /etc/udev/rules.d/99-bluetooth.rules
 ```
 Paste text from the accordingly file.
 
-If you've already set up udev rules in bluetooth settings (Configuration / tools -> bluetooth -> Set up udev rule for Joypad (...) -> your gamepad). And /etc/udev/rules.d/99-bluetooth.rules contains the line like that:
+If you've already set up udev rules in bluetooth settings (Configuration / tools -> bluetooth -> Set up udev rule for Joypad (...) -> your gamepad). And `/etc/udev/rules.d/99-bluetooth.rules` contains the line like that:
 ```
 SUBSYSTEM=="input", ATTRS{name}=="PG-9062S", MODE="0666", ENV{ID_INPUT_JOYSTICK}="1"
 ```
@@ -68,6 +68,8 @@ ACTION=="remove", SUBSYSTEM=="input", ATTRS{uniq}=="<gamepad 2 uniq>", RUN+="/ho
 ### Add systemctl service
 
 Since we cannot to run a long script in the `RUN` attribute in udev rules we run systemctl service when the gamepad connects.
+
+Create file:
 ```shell
 sudo nano /etc/systemd/system/gamepads@.service
 ```
@@ -100,7 +102,7 @@ nano /home/pi/gamepads.sh
 ```
 Paste text from the accordingly file.
 
-Add execute permissions
+Add execute permissions:
 ```shell
 chmod +x /home/pi/gamepads.sh
 ```
