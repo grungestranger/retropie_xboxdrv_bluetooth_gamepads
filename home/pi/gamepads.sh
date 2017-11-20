@@ -10,7 +10,7 @@ base="/opt/retropie/supplementary/xboxdrv/bin/xboxdrv > /dev/null 2>&1 \
 	--force-feedback \
 	--deadzone-trigger 15% \
 	--deadzone 4000 \
-	--mimic-xpad
+	--mimic-xpad \
 	--device-name \"xboxdrv \$gamepad\" \
 	--axismap -Y1=Y1,-Y2=Y2"
 
